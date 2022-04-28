@@ -1,4 +1,5 @@
-import { HighlightStyle, tags } from '@codemirror/highlight'
+import { HighlightStyle } from '@codemirror/language'
+import { tags } from '@lezer/highlight'
 
 // Note that these colors must correspond with the colors in styles.scss
 const colorBoolean = '#ff8c00'
