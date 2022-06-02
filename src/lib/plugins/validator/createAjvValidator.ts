@@ -1,4 +1,5 @@
 import Ajv from 'ajv-dist'
+import addFormats from 'ajv-formats'
 import { parseJSONPointerWithArrayIndices } from '../../utils/jsonPointer.js'
 import type { JSONData, ValidationError } from '../../types'
 
@@ -16,6 +17,7 @@ export function createAjvValidator(schema: JSONData, schemaDefinitions: JSONData
     verbose: true,
     $data: true
   })
+  addFormats(ajv)
 
   if (schemaDefinitions) {
     Object.keys(schemaDefinitions).forEach((ref) => {
